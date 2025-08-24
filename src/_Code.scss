@@ -1,0 +1,28 @@
+@use "sass:map";
+@use "Variables" as *;
+
+code {
+  color: map.get($color-map, "danger");
+  background: #f1f1f1;
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+  padding: 0.2rem;
+  font-size: 1.6rem;
+}
+
+pre {
+  padding: 0.2rem 0.5rem;
+  background: #f1f1f1;
+  border: 1px solid #e1e1e1;
+  max-width: 90rem;
+
+  & > code {
+    color: inherit;
+    background-color: inherit;
+    border: none;
+    border-radius: inherit;
+    display: block;
+    padding: 0;
+    white-space: pre;
+  }
+}

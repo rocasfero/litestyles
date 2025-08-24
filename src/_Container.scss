@@ -1,0 +1,32 @@
+@use "Variables" as *;
+
+.section {
+  padding: 4rem 1.5rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: 0 auto;
+  position: relative;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+
+  .hero-head,
+  .hero-body,
+  .hero-foot {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 0;
+  }
+
+  .hero-body {
+    flex-grow: 1;
+  }
+}

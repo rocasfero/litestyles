@@ -1,0 +1,31 @@
+// Fonts
+// $font-defaults: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+//   "Hiragino Sans", Meiryo, sans-serif;
+
+$font-defaults: "M PLUS 1p", "Roboto", "Raleway", HelveticaNeue,
+  "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+// Margin & Padding
+$spacing-array: 0rem, 0.25rem, 0.5rem, 0.75rem, 1rem, 1.5rem, 3rem;
+
+// Colors
+$color-map: (
+  base: hsl(0, 0%, 13%),
+  primary: hsl(39, 100%, 50%),
+  info: hsl(221, 100%, 80%),
+  success: hsl(134, 100%, 80%),
+  warning: hsl(53, 100%, 80%),
+  danger: hsl(0, 100%, 80%),
+  link: hsl(194, 76%, 49%),
+  link-hover: hsl(194, 83%, 32%),
+  black: hsl(0, 0%, 0%),
+  grey-20: hsl(0, 0%, 20%),
+  grey-40: hsl(0, 0%, 40%),
+  grey: hsl(0, 0%, 50%),
+  grey-60: hsl(0, 0%, 60%),
+  grey-80: hsl(0, 0%, 80%),
+  white: hsl(0, 0%, 100%),
+);
+
+// Size
+$font-size-array: 3rem, 2.5rem, 2rem, 1.8rem, 1.6rem, 1.2rem, 1rem, 0.8rem;

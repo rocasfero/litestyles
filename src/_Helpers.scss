@@ -1,0 +1,74 @@
+@use "sass:list";
+@use "sass:map";
+@use "Variables" as *;
+
+$mp-map: (
+  "m": "margin",
+  "p": "padding",
+);
+
+$direction-map: (
+  "": "",
+  x: (
+    "-left",
+    "-right",
+  ),
+  y: (
+    "-top",
+    "-bottom",
+  ),
+  t: "-top",
+  b: "-bottom",
+  l: "-left",
+  r: "-right",
+);
+
+// Margin & Padding
+@each $mp-char, $mp-str in $mp-map {
+  @each $dir, $pos-arr in $direction-map {
+    @each $val in $spacing-array {
+      $idx: list.index($spacing-array, $val) - 1;
+      .#{$mp-char}#{$dir}-#{$idx} {
+        @each $pos in $pos-arr {
+          #{$mp-str}#{$pos}: #{$val};
+        }
+      }
+    }
+  }
+}
+
+// Align
+@each $align in (right, left, center, justify) {
+  .is-align-#{$align} {
+    text-align: #{$align};
+  }
+}
+
+// Width & Height
+@each $param in (width, height) {
+  .is-full-#{$param} {
+    #{$param}: 100%;
+  }
+}
+
+// Color
+@each $key, $value in $color-map {
+  .is-color-#{"" + $key} {
+    color: $value;
+  }
+}
+
+// Background
+@each $key, $value in $color-map {
+  .is-bg-color-#{"" + $key} {
+    background-color: $value;
+  }
+}
+
+// Font size
+@each $value in $font-size-array {
+  $idx: list.index($font-size-array, $value);
+  .is-size-#{$idx} {
+    font-size: $value;
+  }
+}

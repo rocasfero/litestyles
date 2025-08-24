@@ -1,0 +1,37 @@
+.row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 100%;
+
+  @for $i from 1 through 12 {
+    .col-#{$i} {
+      display: block;
+      max-width: 100%;
+      overflow-x: auto;
+      flex: 0 0 calc(100% / 12) * $i;
+    }
+  }
+}
+
+.level {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 100%;
+
+  .leval-item {
+    flex-basis: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .level {
+    flex-direction: column;
+  }
+}

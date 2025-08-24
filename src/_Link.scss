@@ -1,0 +1,11 @@
+@use 'sass:map';
+@use 'Variables' as *;
+
+a {
+  color: map.get($color-map, link);
+
+  &:hover,
+  &:focus {
+    color: map.get($color-map, link-hover);
+  }
+}

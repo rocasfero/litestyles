@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@100;300;400;500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./dist/litestyles.css" />
+    <style>
+      .bg1 {
+        background-color: #eee;
+        border-radius: 0.5em;
+      }
+      .bg2 {
+        background-color: #ddd;
+        border-radius: 0.5em;
+      }
+      .bg3 {
+        background-color: #ccc;
+        border-radius: 0.5em;
+      }
+
+      .b {
+        padding: 0.2rem 0.5rem;
+        /* border: solid 1px #999; */
+        border-radius: 0.5rem;
+      }
+
+      .hero-height {
+        min-height: 500px;
+      }
+
+      .sample::before {
+        position: absolute;
+        right: 0;
+        content: "SAMPLE CODE";
+        color: #aaa;
+        border-radius: 0.5rem;
+        font-size: 80%;
+        margin: 0.5rem 0.7rem;
+        padding: 0rem 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Banner -->
+    <section class="section">
+      <div class="hero container hero-height">
+        <div class="hero-head">
+          <div class="level">
+            <div class="level-item">
+              <h1 class="is-size-4">litestyles.css</h1>
+            </div>
+            <div class="level-item">
+              <a
+                href="https://github.com/rocasfero/litestyles.git"
+                target="_blank"
+              >
+                <img
+                  src="https://img.shields.io/badge/Github-999?logo=github"
+                  alt="Github Link"
+                  style="display: inline-block"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="hero-body">
+          <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4">
+              <figure>
+                <img src="litestyles.png" alt="logo" />
+              </figure>
+            </div>
+            <div class="col-4"></div>
+          </div>
+          <ul style="list-style: none">
+            <li class="my-5">Lightweight. Minimal. Responsive.</li>
+            <li class="my-5">
+              Normalize-powered, Sass-built, and ready for anything.
+            </li>
+            <li class="my-5">
+              Inspired by Milligram, Skeleton & Bulma — free for any use.
+            </li>
+          </ul>
+        </div>
+        <div class="hero-foot"></div>
+      </div>
+    </section>
+
+    <!-- Container -->
+    <section class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2>Container</h2>
+            <p>コンテンツを内包するラッパー用スタイル</p>
+
+            <h3>.section</h3>
+            <p>上下に余白のあるコンテナ</p>
+            <pre class="sample"><code>&lt;section class="section"&gt;
+  &lt;p&gt;text&lt;/p&gt;
+&lt;/section&gt;</code></pre>
+
+            <h3>.container</h3>
+            <p>左右に余白のあるコンテナ</p>
+            <pre class="sample"><code>&lt;div class="container"&gt;
+  &lt;p&gt;text&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+            <h3>.hero</h3>
+            <p>Hero バナーを作成するためのコンテナ</p>
+            <pre
+              class="sample"
+            ><code>&lt;div class="hero"&gt; &lt;!-- ** need height ** --&gt; 
+  &lt;div class="hero-head"&gt;text&lt;/div&gt;
+  &lt;div class="hero-body"&gt;text&lt;/div&gt;
+  &lt;div class="hero-foot"&gt;text&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Layout -->
+    <section class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2>Layout</h2>
+
+            <h3>.row / .col-(n)</h3>
+            <p>Flex による最大 12 列分割のレイアウトスタイル</p>
+
+            <div class="my-6">
+              <div class="row">
+                <div class="col-12 is-align-center bg1 my-3">TWELVE</div>
+              </div>
+
+              <div class="row">
+                <div class="col-2 is-align-center is-1 bg1 my-3">TWO</div>
+                <div class="col-10 is-align-center is-11 bg2 my-3">TEN</div>
+              </div>
+
+              <div class="row">
+                <div class="col-6 is-align-center bg1 my-3">SIX</div>
+                <div class="col-6 is-align-center bg2 my-3">SIX</div>
+              </div>
+
+              <div class="row">
+                <div class="col-4 is-align-center bg1 my-3">FOUR</div>
+                <div class="col-4 is-align-center bg2 my-3">FOUR</div>
+                <div class="col-4 is-align-center bg3 my-3">FOUR</div>
+              </div>
+            </div>
+
+            <pre class="sample"><code>&lt;div class="row"&gt;
+  &lt;div class="col-2">TWO&lt;/div&gt;
+  &lt;div class="col-10">TEN&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <h3>.level / .level-item</h3>
+            <p>Flex による均等分割のレイアウトスタイル（配置は箸揃え）</p>
+
+            <div class="level">
+              <div class="level-item bg1 px-3 is-align-center">item1</div>
+              <div class="level-item bg2 px-3 is-align-center">item2</div>
+              <div class="level-item bg3 px-3 is-align-center">item3</div>
+            </div>
+
+            <pre class="sample"><code>&lt;div class="level"&gt;
+  &lt;div class="level-item">item1&lt;/div&gt;
+  &lt;div class="level-item">item2&lt;/div&gt;
+  &lt;div class="level-item">item3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Typography -->
+    <section class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2>Typography</h2>
+
+            <p>テキストマークアップタグのスタイル</p>
+
+            <h3>Heading</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>Heading</th>
+                  <th>size</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><h1>Heading1</h1></td>
+                  <td>3.0 rem</td>
+                </tr>
+                <tr>
+                  <td><h2>Heading2</h2></td>
+                  <td>2.5 rem</td>
+                </tr>
+                <tr>
+                  <td><h3>Heading3</h3></td>
+                  <td>2.0 rem</td>
+                </tr>
+                <tr>
+                  <td><h4>Heading4</h4></td>
+                  <td>1.8 rem</td>
+                </tr>
+                <tr>
+                  <td><h5>Heading5</h5></td>
+                  <td>1.6 rem</td>
+                </tr>
+                <tr>
+                  <td><h6>Heading6</h6></td>
+                  <td>1.2 rem</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h3>Paragraph</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+
+            <h3>Others tags</h3>
+            <strong>bold</strong><br />
+            <em>italic</em><br />
+            <u>underline</u><br />
+            <a>anchor</a>
+
+            <h3>Font size class</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>class</th>
+                  <th>size</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><div class="is-size-1">.is-size-1</div></td>
+                  <td>3.0 rem</td>
+                </tr>
+                <tr>
+                  <td><div class="is-size-2">.is-size-2</div></td>
+                  <td>2.5 rem</td>
+                </tr>
+                <tr>
+                  <td><div class="is-size-3">.is-size-3</div></td>
+                  <td>2.0 rem</td>
+                </tr>
+                <tr>
+                  <td><div class="is-size-4">.is-size-4</div></td>
+                  <td>1.8 rem</td>
+                </tr>
+                <tr>
+                  <td><div class="is-size-5">.is-size-5</div></td>
+                  <td>1.6 rem</td>
+                </tr>
+                <tr>
+                  <td><div class="is-size-6">.is-size-6</div></td>
+                  <td>1.2 rem</td>
+                </tr>
+                <tr>
+                  <td><div class="is-size-7">.is-size-7</div></td>
+                  <td>1.0 rem</td>
+                </tr>
+                <tr>
+                  <td><div class="is-size-8">.is-size-8</div></td>
+                  <td>0.8 rem</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <pre class="sample"><code>&lt;!-- Heading --&gt;
+&lt;h1&gt;Heading1&lt;/h1&gt;
+&lt;h2&gt;Heading2&lt;/h2&gt;
+&lt;h3&gt;Heading3&lt;/h3&gt;
+&lt;h4&gt;Heading4&lt;/h4&gt;
+&lt;h5&gt;Heading5&lt;/h5&gt;
+&lt;h6&gt;Heading6&lt;/h6&gt;
+
+&lt;!-- Paragraph --&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit,&lt;/p&gt;
+
+&lt;!-- Other tags --&gt;
+&lt;strong&gt;bold&lt;/strong&gt;
+&lt;em&gt;italic&lt;/em&gt;
+&lt;u&gt;underline&lt;/u&gt;
+&lt;a&gt;anchor&lt;/a&gt;
+
+&lt;!-- Font size --&gt;
+&lt;p class="is-size-1"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, ...&lt;/p&gt;
+&lt;p class="is-size-2"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, ...&lt;/p&gt;
+&lt;p class="is-size-3"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, ...&lt;/p&gt;
+&lt;p class="is-size-4"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, ...&lt;/p&gt;
+&lt;p class="is-size-5"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, ...&lt;/p&gt;
+&lt;p class="is-size-6"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, ...&lt;/p&gt;
+&lt;p class="is-size-7"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, ...&lt;/p&gt;
+&lt;p class="is-size-8"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, ...&lt;/p&gt;
+</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Align -->
+    <section class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2>Text align</h2>
+            <p>テキスト揃え用スタイル</p>
+
+            <h3>.is-align-left</h3>
+            <p class="is-align-left">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <h3>.is-align-right</h3>
+            <p class="is-align-right">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <h3>.is-align-center</h3>
+            <p class="is-align-center">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <h3>.is-align-justify</h3>
+            <p class="is-align-justify">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+
+            <pre
+              class="sample"
+            ><code>&lt;p class="is-align-left"&gt;Lorem ipssum&lt;/p&gt;
+&lt;p class="is-align-right"&gt;Lorem ipssum&lt;/p&gt;
+&lt;p class="is-align-center"&gt;Lorem ipssum&lt;/p&gt;
+&lt;p class="is-align-justify"&gt;Lorem ipssum&lt;/p&gt;
+</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Color -->
+    <section class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2>Color</h2>
+
+            <p>テキスト / 背景に適用するスタイル</p>
+
+            <h3>.is-color-*</h3>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>class</th>
+                  <th>sample</th>
+                  <th>color</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>.is-color-base</td>
+                  <td><span class="b is-color-base">sample</span></td>
+                  <td>hsl(0, 0%, 13%)</td>
+                </tr>
+                <tr>
+                  <td>.is-color-primary</td>
+                  <td><span class="b is-color-primary">sample</span></td>
+                  <td>hsl(39, 100%, 50%)</td>
+                </tr>
+                <tr>
+                  <td>.is-color-info</td>
+                  <td><span class="b is-color-info">sample</span></td>
+                  <td>hsl(221, 100%, 80%)</td>
+                </tr>
+                <tr>
+                  <td>.is-color-success</td>
+                  <td><span class="b is-color-success">sample</span></td>
+                  <td>hsl(134, 100%, 80%)</td>
+                </tr>
+                <tr>
+                  <td>.is-color-warning</td>
+                  <td><span class="b is-color-warning">sample</span></td>
+                  <td>hsl(53, 100%, 80%)</td>
+                </tr>
+                <tr>
+                  <td>.is-color-danger</td>
+                  <td><span class="b is-color-danger">sample</span></td>
+                  <td>hsl(0, 100%, 80%)</td>
+                </tr>
+                <tr>
+                  <td>.is-color-link</td>
+                  <td><span class="b is-color-link">sample</span></td>
+                  <td>hsl(194, 76%, 49%)</td>
+                </tr>
+                <tr>
+                  <td>.is-color-link-hover</td>
+                  <td><span class="b is-color-link-hover">sample</span></td>
+                  <td>hsl(194, 83%, 32%)</td>
+                </tr>
+                <tr>
+                  <td>.is-color-black</td>
+                  <td><span class="b is-color-black">sample</span></td>
+                  <td>hsl(0, 0%, 0%)</td>
+                </tr>
+                <tr>
+                  <td>.is-color-grey-20</td>
+                  <td><span class="b is-color-grey-20">sample</span></td>
+                  <td>hsl(0, 0%, 20%)</td>
+                </tr>
+                <tr>
+                  <td>.is-color-grey-40</td>
+                  <td><span class="b is-color-grey-40">sample</span></td>
+                  <td>hsl(0, 0%, 40%)</td>
+                </tr>
+                <tr>
+                  <td>.is-color-grey</td>
+                  <td><span class="b is-color-grey">sample</span></td>
+                  <td>hsl(0, 0%, 50%)</td>
+                </tr>
+                <tr>
+                  <td>.is-color-grey-60</td>
+                  <td><span class="b is-color-grey-60">sample</span></td>
+                  <td>hsl(0, 0%, 60%)</td>
+                </tr>
+                <tr>
+                  <td>.is-color-grey-80</td>
+                  <td><span class="b is-color-grey-80">sample</span></td>
+                  <td>hsl(0, 0%, 80%)</td>
+                </tr>
+                <tr>
+                  <td>.is-color-white</td>
+                  <td><span class="b is-color-white">sample</span></td>
+                  <td>hsl(0, 0%, 100%)</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h3>.is-bg-color-*</h3>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>class</th>
+                  <th>sample</th>
+                  <th>color</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>.is-color-base</td>
+                  <td>
+                    <span class="b is-bg-color-base">sample</span>
+                  </td>
+                  <td>hsl(0, 0%, 13%)</td>
+                </tr>
+                <tr>
+                  <td>.is-color-primary</td>
+                  <td>
+                    <span class="b is-bg-color-primary">sample</span>
+                  </td>
+                  <td>hsl(39, 100%, 50%)</td>
+                </tr>
+                <tr>
+                  <td>.is-color-info</td>
+                  <td>
+                    <span class="b is-bg-color-info">sample</span>
+                  </td>
+                  <td>hsl(221, 100%, 80%)</td>
+                </tr>
+                <tr>
+                  <td>.is-color-success</td>
+                  <td>
+                    <span class="b is-bg-color-success">sample</span>
+                  </td>
+                  <td>hsl(134, 100%, 80%)</td>
+                </tr>
+                <tr>
+                  <td>.is-color-warning</td>
+                  <td>
+                    <span class="b is-bg-color-warning">sample</span>
+                  </td>
+                  <td>hsl(53, 100%, 80%)</td>
+                </tr>
+                <tr>
+                  <td>.is-color-danger</td>
+                  <td>
+                    <span class="b is-bg-color-danger">sample</span>
+                  </td>
+                  <td>hsl(0, 100%, 80%)</td>
+                </tr>
+                <tr>
+                  <td>.is-color-link</td>
+                  <td>
+                    <span class="b is-bg-color-link">sample</span>
+                  </td>
+                  <td>hsl(194, 76%, 49%)</td>
+                </tr>
+                <tr>
+                  <td>.is-color-link-hover</td>
+                  <td>
+                    <span class="b is-bg-color-link-hover">sample</span>
+                  </td>
+                  <td>hsl(194, 83%, 32%)</td>
+                </tr>
+                <tr>
+                  <td>.is-color-black</td>
+                  <td>
+                    <span class="b is-bg-color-black">sample</span>
+                  </td>
+                  <td>hsl(0, 0%, 0%)</td>
+                </tr>
+                <tr>
+                  <td>.is-color-grey-20</td>
+                  <td>
+                    <span class="b is-bg-color-grey-20">sample</span>
+                  </td>
+                  <td>hsl(0, 0%, 20%)</td>
+                </tr>
+                <tr>
+                  <td>.is-color-grey-40</td>
+                  <td>
+                    <span class="b is-bg-color-grey-40">sample</span>
+                  </td>
+                  <td>hsl(0, 0%, 40%)</td>
+                </tr>
+                <tr>
+                  <td>.is-color-grey</td>
+                  <td>
+                    <span class="b is-bg-color-grey">sample</span>
+                  </td>
+                  <td>hsl(0, 0%, 50%)</td>
+                </tr>
+                <tr>
+                  <td>.is-color-grey-60</td>
+                  <td>
+                    <span class="b is-bg-color-grey-60">sample</span>
+                  </td>
+                  <td>hsl(0, 0%, 60%)</td>
+                </tr>
+                <tr>
+                  <td>.is-color-grey-80</td>
+                  <td>
+                    <span class="b is-bg-color-grey-80">sample</span>
+                  </td>
+                  <td>hsl(0, 0%, 80%)</td>
+                </tr>
+                <tr>
+                  <td>.is-color-white</td>
+                  <td>
+                    <span class="b is-bg-color-white">sample</span>
+                  </td>
+                  <td>hsl(0, 0%, 100%)</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <pre
+              class="sample"
+            ><code>&lt;span class="is-color-white is-bg-color-primary"&gt;hello&lt;/span&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- List -->
+    <section class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2>List</h2>
+
+            <p>各種リストに適用するスタイル</p>
+
+            <div class="row">
+              <div class="col-4">
+                <h3>Unorderd list</h3>
+
+                <ul>
+                  <li>item1</li>
+                  <li>item2</li>
+                  <li>
+                    item3
+                    <ul>
+                      <li>item4</li>
+                      <li>item5</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-4">
+                <h3>Orderd list</h3>
+
+                <ol>
+                  <li>item1</li>
+                  <li>item2</li>
+                  <li>
+                    item3
+                    <ol>
+                      <li>item4</li>
+                      <li>item5</li>
+                    </ol>
+                  </li>
+                </ol>
+              </div>
+              <div class="col-4">
+                <h3>Description list</h3>
+
+                <dl>
+                  <dt>term1</dt>
+                  <dd>description1</dd>
+                  <dt>term2</dt>
+                  <dd>description2</dd>
+                </dl>
+              </div>
+            </div>
+
+            <pre class="sample"><code>&lt;ul&gt;
+  &lt;li&gt;item1&lt;/li&gt;
+  &lt;li&gt;item2&lt;/li&gt;
+  &lt;li&gt;
+    item3
+    &lt;ul&gt;
+      &lt;li&gt;item4&lt;/li&gt;
+      &lt;li&gt;item5&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;item1&lt;/li&gt;
+  &lt;li&gt;item2&lt;/li&gt;
+  &lt;li&gt;
+    item3
+    &lt;ol&gt;
+      &lt;li&gt;item4&lt;/li&gt;
+      &lt;li&gt;item5&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;term1&lt;/dt&gt;
+  &lt;dd&gt;description1&lt;/dd&gt;
+  &lt;dt&gt;term2&lt;/dt&gt;
+  &lt;dd&gt;description2&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Table -->
+    <section class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2>Table</h2>
+
+            <p>表組みに適用するスタイル</p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>title1</th>
+                  <th>title2</th>
+                  <th>title3</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>item1</td>
+                  <td>item2</td>
+                  <td>item3</td>
+                </tr>
+                <tr>
+                  <td>item4</td>
+                  <td>item5</td>
+                  <td>item6</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <pre class="sample"><code>&lt;table&gt;
+  &lt;thead&gt; &lt;!-- need thead section --&gt;
+    &lt;tr&gt;
+      &lt;th&gt;title1&lt;/th&gt;
+      &lt;th&gt;title2&lt;/th&gt;
+      &lt;th&gt;title3&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;item1&lt;/td&gt;
+      &lt;td&gt;item2&lt;/td&gt;
+      &lt;td&gt;item3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;item4&lt;/td&gt;
+      &lt;td&gt;item5&lt;/td&gt;
+      &lt;td&gt;item6&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Image -->
+    <section class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2>Image</h2>
+            <p>画像に適用するスタイル</p>
+            <figure>
+              <img src="litestyles.png" alt="logo" />
+            </figure>
+
+            <pre class="sample"><code>&lt;figure&gt;
+  &lt;img src="./litestyles.png" alt="logo"&gt;
+&lt;figure&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <section class="section">
+      <div class="level">
+        <div class="level-item"></div>
+        <div class="level-item is-size-6">&copy; 2025 czu.jp</div>
+        <div class="level-item"></div>
+      </div>
+    </section>
+  </body>
+</html>

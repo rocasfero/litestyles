@@ -1,0 +1,16 @@
+{
+  "name": "litestyles",
+  "version": "0.0.1",
+  "main": "dist/litestyles.css",
+  "css": "dist/litestyles.css",
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "sass src/main.scss dist/litestyles.css && sass src/main.scss dist/litestyles.min.css --style=compressed",
+    "dev": "sass --watch src/main.scss dist/litestyles.css"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "rimraf": "^6.0.1",
+    "sass": "^1.90.0"
+  }
+}

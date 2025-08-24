@@ -1,0 +1,91 @@
+@use "sass:list";
+@use "sass:map";
+@use "Variables" as *;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: list.nth($font-size-array, 1);
+  line-height: 1.2;
+  letter-spacing: -0.1rem;
+}
+
+h2 {
+  font-size: list.nth($font-size-array, 2);
+  line-height: 1.25;
+  letter-spacing: -0.1rem;
+}
+
+h3 {
+  font-size: list.nth($font-size-array, 3);
+  line-height: 1.3;
+  letter-spacing: -0.1rem;
+}
+
+h4 {
+  font-size: list.nth($font-size-array, 4);
+  line-height: 1.35;
+  letter-spacing: -0.08rem;
+}
+
+h5 {
+  font-size: list.nth($font-size-array, 5);
+  line-height: 1.5;
+  letter-spacing: -0.05rem;
+}
+
+h6 {
+  font-size: list.nth($font-size-array, 6);
+  line-height: 1.6;
+  letter-spacing: 0rem;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 2.5rem;
+}
+
+blockquote {
+  margin: 1rem;
+  padding: 1rem;
+  font-style: italic;
+  background: #efefef;
+  border-left: solid #ccc 5px;
+}
+
+blockquote p:last-child {
+  margin-bottom: 0 !important;
+}
+
+b,
+strong {
+  font-weight: 700;
+}
+
+i,
+em {
+  font-style: italic;
+}
+
+u {
+  text-decoration: underline;
+}
+
+.is-no-decolation {
+  text-decoration: none;
+}
+
+hr {
+  border: 0;
+  border-top: 0.1rem solid map.get($color-map, grey-60);
+  margin: 3.0rem 0;
+}
